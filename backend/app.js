@@ -21,6 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/message", messageRouter);
 
+app.get("/", (req,res) => {return res.status(200).json({
+success: true,
+message: "Hello World"
+})})
+
 dbConnection();
 
 export default app;
